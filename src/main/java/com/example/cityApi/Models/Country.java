@@ -15,11 +15,12 @@ public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "country_id")
     private Integer id;
     private String countryName;
     private String countryCode;
 
     @OneToMany
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "country_id")
     private Set<City> cities;
 }
