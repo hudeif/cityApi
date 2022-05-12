@@ -1,8 +1,7 @@
 package com.example.cityApi.Models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,7 +9,8 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class Country {
 
     @Id
@@ -20,6 +20,7 @@ public class Country {
     private String countryName;
     private String countryCode;
 
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "country_id")
     private Set<City> cities;
