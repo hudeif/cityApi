@@ -16,5 +16,8 @@ public class City {
     private Integer id;
     private String cityName;
 
+    @ManyToOne
+    private Country country;
+
 
 }
