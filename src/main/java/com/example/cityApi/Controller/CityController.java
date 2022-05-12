@@ -17,7 +17,7 @@ public class CityController {
     public List<City>getAllCity(){
         return iCity.findAll();
     }
-    @GetMapping("/add")
+    @PostMapping("/add")
     public City addCity(@RequestBody City city )
     {
       return  iCity.save(city);
