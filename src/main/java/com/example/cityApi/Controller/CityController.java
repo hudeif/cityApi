@@ -24,9 +24,9 @@ public class CityController {
     public List<City>getAllCity(){
         return iCity.findAll();
     }
-
     @PostMapping("/add")
     public City addCity(@RequestBody CityRequest cityRequest)
+
     {
         Country country = iCountry.findById(cityRequest.country_id);
 
