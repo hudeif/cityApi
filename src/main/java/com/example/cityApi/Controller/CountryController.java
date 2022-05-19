@@ -19,6 +19,12 @@ public class CountryController {
         return iCountry.findAll();
     }
 
+
+    @GetMapping("/{id}")
+    public Country getOne(@PathVariable Integer id){
+        return iCountry.findById(id).get();
+    }
+
     @PostMapping("/add")
     public Country add(@RequestBody Country country){
         return iCountry.save(country);

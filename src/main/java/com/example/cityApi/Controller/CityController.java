@@ -25,6 +25,7 @@ public class CityController {
         return iCity.findAll();
     }
 
+
     @PostMapping("/add")
     public City addCity(@RequestBody CityRequest cityRequest)
     {
@@ -44,12 +45,9 @@ public class CityController {
     {
         return  iCity.save(city);
     }
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteCity(@PathVariable Integer id){
         iCity.deleteById(id);
     }
-
-
-
 
 }
