@@ -1,6 +1,7 @@
 package com.example.cityApi.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,8 +21,8 @@ public class Country {
     private String countryName;
     private String countryCode;
 
-    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "country_id")
+    @JsonIgnoreProperties(value = {"country", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private Set<City> cities;
 }

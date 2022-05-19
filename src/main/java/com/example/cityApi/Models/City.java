@@ -1,5 +1,6 @@
 package com.example.cityApi.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class City {
 
     @ManyToOne
     @JoinColumn(name = "country_id")
+    @JsonIgnoreProperties(value = {"cities", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private Country country;
 
 
