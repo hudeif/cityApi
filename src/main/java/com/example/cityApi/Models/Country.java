@@ -20,6 +20,8 @@ public class Country {
     private Integer id;
     private String countryName;
     private String countryCode;
+    @Column(length = 3000)
+    private String flag;
 
     @OneToMany
     @JoinColumn(name = "country_id")
